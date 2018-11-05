@@ -33,6 +33,10 @@ else()
   )
 endif()
 
+if(LINUX)
+  target_compile_definitions(${target_name} PRIVATE _GNU_SOURCE)
+endif()
+
 
 add_library(${target_name} STATIC
   ${${target_name}_src}
